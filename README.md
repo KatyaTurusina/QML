@@ -115,6 +115,7 @@ Rectangle{
     border.color: "black"; border.width: 1
 }
 ```
+#### Результат
 ![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_1_1.png)
 
 ## Задание 2
@@ -210,6 +211,7 @@ Window
     }
 }
 ```
+#### Результат
 ![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_1_2.png)
 
 # QML_2. Layouts
@@ -289,6 +291,7 @@ Rectangle{
     }
 }
 ```
+#### Результат
 ![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_2.png)
 
 # QML_3. Взаимодействие с пользователем
