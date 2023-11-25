@@ -421,3 +421,89 @@ Rectangle{
 ![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_3_1.png)
 ![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_3_2.png)
 ![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_3_3.png)
+
+# QML_7. Стандартные элементы интерфейса
+## Задание 1
+#### [main.qml](https://github.com/KatyaTurusina/QML/blob/main/QML_7/main.qml)
+```
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Layouts 1.12
+
+ApplicationWindow {
+    visible: true
+    width: 330
+    height: 500
+    title: "Login Window"
+    ColumnLayout {
+        id: body
+        width: 200
+        anchors.centerIn: parent
+        spacing: 10
+        My_TextField {
+            id: loginField
+            placeholderText: "login"
+        }
+        My_TextField {
+            id: passwordField
+            placeholderText: "password"
+            echoMode: TextInput.Password
+        }
+        RowLayout {
+            My_Button {
+                text: "Log In"
+                buttonColor: "light sky blue"
+            }
+            My_Button {
+                text: "Clear"
+                onClicked: {
+                    loginField.text = ""
+                    passwordField.text = ""
+                }
+            }
+        }
+    }
+}
+```
+#### [My_TextField.qml](https://github.com/KatyaTurusina/QML/blob/main/QML_7/My_TextField.qml)
+```
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+TextField {
+    id: textField
+    placeholderText: "text"
+    font.pixelSize: 14
+    background: Rectangle {
+        implicitWidth: body.width
+        radius: 4
+        color: "#fff"
+        border.width: 1
+        border.color: textField.activeFocus ? "#87CEFA" : "#ddd"
+    }
+    onFocusChanged: {
+            if (focus) {
+                textField.focus = true;
+            }
+        }
+
+}
+```
+#### [My_Button.qml](https://github.com/KatyaTurusina/QML/blob/main/QML_7/My_Button.qml)
+```
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+Button {
+    id: myButton
+    text: "text"
+    property color buttonColor: "gainsboro"
+    background: Rectangle {
+        implicitWidth: body.width/2 - 2
+        implicitHeight: 30
+        color: myButton.buttonColor
+        radius: 4
+    }
+}
+```
+#### Результат
+![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_7_1.png)
+![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_7_2.png)
