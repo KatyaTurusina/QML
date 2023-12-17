@@ -649,7 +649,7 @@ Rectangle{
 }
 ```
 #### Результат (gif)
-![Traffic-light-2023-12-17-21-28-26](https://github.com/KatyaTurusina/QML/assets/130843083/cb64293b-f290-4eb4-946a-98851e4cddd9)
+![traffic-light](https://github.com/KatyaTurusina/QML/assets/130843083/915c0e9f-9c25-4e8f-81e1-0d6b1915e322)
 
 # QML_7. Стандартные элементы интерфейса
 ## Задание 1
