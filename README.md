@@ -648,7 +648,7 @@ Rectangle{
     anchors.horizontalCenter: rect.horizontalCenter
 }
 ```
-#### Результат
+#### Результат (gif)
 ![Traffic-light-2023-12-17-21-28-26](https://github.com/KatyaTurusina/QML/assets/130843083/cb64293b-f290-4eb4-946a-98851e4cddd9)
 
 # QML_7. Стандартные элементы интерфейса
