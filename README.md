@@ -541,7 +541,7 @@ Item {
 ![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_4_2.png)
 ![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_4_3.png)
 
-# QML_4. Состояния и переходы
+# QML_5. Состояния и переходы
 ## Задание "Светофор"
 #### [main.qml](https://github.com/KatyaTurusina/QML/blob/main/QML_5/main.qml)
 ```
