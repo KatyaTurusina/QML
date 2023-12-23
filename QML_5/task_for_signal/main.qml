@@ -9,13 +9,13 @@ Window {
     visible: true
     title: qsTr("Layout")
     property int myMargin: 7
-    
+
     ColumnLayout {
         id: page
         spacing: myMargin
         anchors.fill: parent
-        
-        
+
+
         Comp {
             id: header
             myText.text: "Header"
@@ -24,7 +24,7 @@ Window {
                 id: backButton
             }
         }
-        
+
         Comp {
             id: content
             myText.text: "Some content"
@@ -34,12 +34,45 @@ Window {
             Layout.rightMargin: 10
             Layout.fillHeight: true
         }
-        
+
         RowLayout {
             id: buttons
             spacing: 2
             Layout.fillHeight: true
-            
+
+            Comp {
+                id: b1
+                height: header.height
+                Layout.fillWidth: true
+                myText.text: "1"
+                MouseArea{
+                    anchors.fill:parent
+                    onClicked: { buttons.state = "button1State"}
+                }
+
+            }
+
+            Comp {
+                id: b2
+                height: header.height
+                Layout.fillWidth: true
+                myText.text: "2"
+                MouseArea{
+                    anchors.fill:parent
+                    onClicked: { buttons.state = "button2State"}
+                }
+            }
+
+            Comp {
+                id: b3
+                height: header.height
+                Layout.fillWidth: true
+                myText.text: "3"
+                MouseArea{
+                    anchors.fill:parent
+                    onClicked: { buttons.state = "button3State"}
+                }
+            }
             states: [
                 State {
                     name: "button1State"
@@ -72,40 +105,62 @@ Window {
                     PropertyChanges { target: backButton; opacity: 1}
                 }
             ]
-            
-            Comp {
-                id: b1
-                height: header.height
-                Layout.fillWidth: true
-                myText.text: "1"
-                MouseArea{
-                    anchors.fill:parent
-                    onClicked: { buttons.state = "button1State"}
+            transitions: [
+                Transition {
+                    from: "button1State"
+                    to: "button2State"
+                    PropertyAnimation  {
+                        target: b1
+                        property: "opacity"
+                        duration: 500
+                    }
+                },
+                Transition {
+                    from: "button1State"
+                    to: "button3State"
+                    PropertyAnimation  {
+                        target: b1
+                        property: "opacity"
+                        duration: 300
+                    }
+                },
+                Transition {
+                    from: "button2State"
+                    to: "button1State"
+                    PropertyAnimation  {
+                        target: b2
+                        property: "opacity"
+                        duration: 300
+                    }
+                },
+                Transition {
+                    from: "button2State"
+                    to: "button3State"
+                    PropertyAnimation  {
+                        target: b2
+                        property: "opacity"
+                        duration: 300
+                    }
+                },
+                Transition {
+                    from: "button3State"
+                    to: "button1State"
+                    PropertyAnimation  {
+                        target: b3
+                        property: "opacity"
+                        duration: 300
+                    }
+                },
+                Transition {
+                    from: "button3State"
+                    to: "button2State"
+                    PropertyAnimation  {
+                        target: b3
+                        property: "opacity"
+                        duration: 300
+                    }
                 }
-                
-            }
-            
-            Comp {
-                id: b2
-                height: header.height
-                Layout.fillWidth: true
-                myText.text: "2"
-                MouseArea{
-                    anchors.fill:parent
-                    onClicked: { buttons.state = "button2State"}
-                }
-            }
-            
-            Comp {
-                id: b3
-                height: header.height
-                Layout.fillWidth: true
-                myText.text: "3"
-                MouseArea{
-                    anchors.fill:parent
-                    onClicked: { buttons.state = "button3State"}
-                }
-            }
+            ]
         }
     }
 }
