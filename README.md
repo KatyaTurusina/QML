@@ -859,7 +859,8 @@ Comp {
 }
 ```
 #### Результат (gif)
-![qml3_2](https://github.com/KatyaTurusina/QML/assets/130843083/b59ca32c-3b05-491c-b93c-bbf9865f3c3d)
+![1223](https://github.com/KatyaTurusina/QML/assets/130843083/9ad252de-771a-400e-a142-91080a297b36)
+
 
 # QML_7. Стандартные элементы интерфейса
 ## Задание 1
