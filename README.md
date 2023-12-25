@@ -861,6 +861,145 @@ Comp {
 #### Результат (gif)
 ![1223](https://github.com/KatyaTurusina/QML/assets/130843083/9ad252de-771a-400e-a142-91080a297b36)
 
+# QML_6. Stack View
+## Задание "Светофор"
+#### [main.qml](https://github.com/KatyaTurusina/QML/blob/main/QML_6/main.qml)
+```
+import QtQuick 2.15
+import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.3
+
+ApplicationWindow {
+    width: 360
+    height: 640
+    visible: true
+    title: qsTr("StackView_test")
+    
+    header: ToolBar {
+        id: page_header
+        height: 40
+        RowLayout {
+            ToolButton {
+                id: back_btn
+                text: "< Back"
+                font.pixelSize: 20
+                visible: stack_view.depth > 1
+                anchors.verticalCenter: parent.verticalCenter
+                onClicked: stack_view.pop()
+            }
+            Text {
+                id: header_page_text
+                text: stack_view.currentItem ? stack_view.currentItem.btext : ""
+                anchors.centerIn: parent
+            }
+        }
+    }
+    
+    StackView {
+        id: stack_view
+        anchors.fill: parent
+        initialItem: page_red
+    }
+    
+    My_Page {
+        id: page_red
+        bg: "red"
+        btext1: "To_Green"
+        btext2: "To_Yellow"
+    }
+    
+    My_Page {
+        id: page_green
+        bg: "green"
+        btext1: "To_Yellow"
+        btext2: "To_Red"
+        visible: false
+    }
+    
+    My_Page {
+        id: page_yellow
+        bg: "yellow"
+        btext1: "To_Red"
+        btext2: "To_Green"
+        visible: false
+    }
+}
+```
+#### [My_Page.qml](https://github.com/KatyaTurusina/QML/blob/main/QML_1/My_Page.qml)
+```
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.3
+
+Item {
+    property string bg: "white"
+    property string btext1: ""
+    property string btext2: ""
+    
+    Rectangle {
+        anchors.fill: parent
+        color: bg
+        width: 100
+        
+        ColumnLayout {
+            anchors.fill: parent
+            
+            Button {
+                text: btext1
+                Layout.fillWidth: true
+                onClicked: buttonClicked1()
+            }
+            
+            Button {
+                text: btext2
+                Layout.fillWidth: true
+                onClicked: buttonClicked2()
+            }
+        }
+    }
+    
+    function buttonClicked1() {
+        if (btext1 === "To_Green") {
+            page_green.visible = true
+            page_yellow.visible = false
+            page_red.visible = false
+            stack_view.push(page_green)
+        } else if (btext1 === "To_Yellow") {
+            page_green.visible = false
+            page_yellow.visible = true
+            page_red.visible = false
+            stack_view.pop(page_yellow)
+        } else if (btext1 === "To_Red") {
+            page_green.visible = false
+            page_yellow.visible = false
+            page_red.visible = true
+            stack_view.pop(page_red)
+        }
+    }
+    
+    function buttonClicked2() {
+        if (btext2 === "To_Green") {
+            page_green.visible = true
+            page_yellow.visible = false
+            page_red.visible = false
+            stack_view.push(page_green)
+        } else if (btext2 === "To_Yellow") {
+            page_green.visible = false
+            page_yellow.visible = true
+            page_red.visible = false
+            stack_view.push(page_yellow)
+        } else if (btext2 === "To_Red") {
+            page_green.visible = false
+            page_yellow.visible = false
+            page_red.visible = true
+            stack_view.pop(page_red)
+        }
+    }
+}
+```
+#### Результат
+![stack_view](https://github.com/KatyaTurusina/QML/assets/130843083/99cbcf6d-b3c4-4d08-b838-ef47d48c95f3)
 
 # QML_7. Стандартные элементы интерфейса
 ## Задание 1
