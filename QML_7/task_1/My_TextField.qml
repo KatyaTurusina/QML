@@ -13,9 +13,8 @@ TextField {
         border.color: textField.activeFocus ? "#87CEFA" : "#ddd"
     }
     onFocusChanged: {
-            if (focus) {
-                textField.focus = true;
-            }
+        if (focus) {
+            textField.focus = true;
         }
-
+    }
 }
