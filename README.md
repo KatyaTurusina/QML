@@ -1084,6 +1084,5 @@ Button {
 }
 ```
 #### Результат
-![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_7_1.png)
-![](https://github.com/KatyaTurusina/QML/blob/main/images/qml_7_2.png)
+![1225](https://github.com/KatyaTurusina/QML/assets/130843083/318bde96-7870-47c7-a9da-859c3d0332b7)
 
