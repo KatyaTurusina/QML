@@ -926,7 +926,7 @@ ApplicationWindow {
     }
 }
 ```
-#### [My_Page.qml](https://github.com/KatyaTurusina/QML/blob/main/QML_1/My_Page.qml)
+#### [My_Page.qml](https://github.com/KatyaTurusina/QML/blob/main/QML_6/My_Page.qml)
 ```
 import QtQuick 2.15
 import QtQuick.Controls 2.15
